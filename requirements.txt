@@ -1,0 +1,7 @@
+joblib
+# pickle
+scikit-learn
+nltk
+pandas
+Flask==2.2.4
+flasgger==0.9.4
