@@ -3,6 +3,7 @@ import joblib
 from flasgger import Swagger
 import pickle
 import preprocess
+import os
 
 
 app = Flask(__name__)
@@ -32,8 +33,17 @@ def predict():
         description: Some result
     """
     msg = request.get_json().get('msg')
-    classifier = joblib.load('models/classifier_sentiment_model')
-    cv = pickle.load(open('bow/bow_sentiment_model.pkl', 'rb'))
+    # print(msg)
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+
+    classifier_path = os.path.join(script_dir, 'models', 'classifier_sentiment_model')
+    classifier = joblib.load(classifier_path)
+
+    cv_path = os.path.join(script_dir, 'bow', 'bow_sentiment_model.pkl')
+    cv = pickle.load(open(cv_path, 'rb'))
+
+    # classifier = joblib.load('models/classifier_sentiment_model')
+    # cv = pickle.load(open('bow/bow_sentiment_model.pkl', 'rb'))
     result = classifier.predict(cv.transform([preprocess.preprocess_review(msg)]).toarray())[0]
     return {
         "result": result.item(),
