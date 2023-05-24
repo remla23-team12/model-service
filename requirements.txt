@@ -5,4 +5,4 @@ nltk
 pandas
 Flask==2.2.4
 flasgger==0.9.4
-remla12-lib-release==0.1.0
+remla12-lib-release==0.1.1
