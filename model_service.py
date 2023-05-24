@@ -4,7 +4,7 @@ from flasgger import Swagger
 import pickle
 import preprocess
 import os
-import remla12_lib_release
+import remla12_lib_release.version_util as version_util
 
 app = Flask(__name__)
 swagger = Swagger(app)
@@ -51,7 +51,7 @@ def predict():
     return {
         "result": result.item(),
         "message": msg,
-        "lib_version": remla12_lib_release.__version__,
+        "lib_version": version_util.get_version(),
     }
 
 
