@@ -25,8 +25,11 @@ To give the model-service a test run, without the front-end [app](https://github
     ```json
     {
         "message": "We are so glad we found this place.",
-        "result": 1
+        "result": 1,
+        "lib_version": "0.1.5"
     }
     ```
     The `result` key is mapped to the value 1, which means that the model predicts the message to have a postive sentiment.
+    ```
+    If you want to change lib version, make sure your chosen lib version exist, and modify requirements.txt
 6. Once done you can use `Ctrl + C` in your terminal to exit and remove the container.
