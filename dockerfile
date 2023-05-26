@@ -11,8 +11,7 @@ RUN python -m pip install --upgrade pip &&\
 COPY preprocess.py .
 COPY model_service.py .
 COPY bow bow
-COPY bow/bow_gnb_sentiment_model.pkl bow/bow_gnb_sentiment_model.pkl
-COPY models/bow_gnb_classifier_sentiment_model models/bow_gnb_classifier_sentiment_model
+COPY models models
 
 ENTRYPOINT ["python"]
 CMD ["model_service.py"]
