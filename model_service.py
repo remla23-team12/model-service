@@ -37,8 +37,8 @@ def predict():
     # print(msg)
     script_dir = os.path.dirname(os.path.realpath(__file__))
 
-    classifier_name = "tfidf_gnb_classifier_sentiment_model"
-    textual_represenation_path = "tfidf_gnb_sentiment_model.pkl"
+    classifier_name = "tfidf_svm_classifier_sentiment_model"
+    textual_represenation_path = "tfidf_svm_sentiment_model.pkl"
     classifier_path = os.path.join(script_dir, "models", classifier_name)
     classifier = joblib.load(classifier_path)
 
