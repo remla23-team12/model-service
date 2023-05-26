@@ -37,12 +37,12 @@ def predict():
     # print(msg)
     script_dir = os.path.dirname(os.path.realpath(__file__))
 
-    classifier_name = "bow_svm_classifier_sentiment_model"
-    textual_represenation_path = "bow_svm_sentiment_model.pkl"
+    classifier_name = "tfidf_gnb_classifier_sentiment_model"
+    textual_represenation_path = "tfidf_gnb_sentiment_model.pkl"
     classifier_path = os.path.join(script_dir, "models", classifier_name)
     classifier = joblib.load(classifier_path)
 
-    cv_path = os.path.join(script_dir, "bow", textual_represenation_path)
+    cv_path = os.path.join(script_dir, "tfidf", textual_represenation_path)
     cv = pickle.load(open(cv_path, "rb"))
 
     # classifier = joblib.load('models/classifier_sentiment_model')

@@ -10,7 +10,7 @@ RUN python -m pip install --upgrade pip &&\
 
 COPY preprocess.py .
 COPY model_service.py .
-COPY bow bow
+COPY tfidf tfidf
 COPY models models
 
 ENTRYPOINT ["python"]
