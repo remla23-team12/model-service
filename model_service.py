@@ -37,10 +37,12 @@ def predict():
     # print(msg)
     script_dir = os.path.dirname(os.path.realpath(__file__))
 
-    classifier_path = os.path.join(script_dir, "models", "classifier_sentiment_model")
+    classifier_name = "bow_gnb_classifier_sentiment_model"
+    textual_represenation_path = "bow_gnb_sentiment_model.pkl"
+    classifier_path = os.path.join(script_dir, "models", classifier_name)
     classifier = joblib.load(classifier_path)
 
-    cv_path = os.path.join(script_dir, "bow", "bow_sentiment_model.pkl")
+    cv_path = os.path.join(script_dir, "bow", textual_represenation_path)
     cv = pickle.load(open(cv_path, "rb"))
 
     # classifier = joblib.load('models/classifier_sentiment_model')
@@ -52,6 +54,8 @@ def predict():
         "result": result.item(),
         "message": msg,
         "lib_version": version_util.get_version(),
+        "classifier": classifier_name,
+        "textual_representation_model": textual_represenation_path,
     }
 
 
