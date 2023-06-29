@@ -15,7 +15,9 @@ To give the model-service a test run, without the front-end [app](https://github
     docker run --rm -p8080:8080 test
     ```
     The exposed port of the container is port 8080 and it is forwarded to localhost's port 8080.
-5. You can visit http://localhost:8080/apidocs/ to take a look at the API documentation provided by Flassger. `model-service` only accepts http POST requests. You could use curl or Postman to make a POST request to http://localhost:8080/ with the following contents in the body of the http request:
+5. You can visit http://localhost:8080/apidocs/ to take a look at the API documentation provided by Flassger. `model-service` only accepts http POST requests. You could use curl or Postman to make a POST request to http://localhost:8080/. See the image below to see how to send a POST request in Postman:
+![postman](postman-example.png)
+with the following contents in the body of the http request:
     ```json
     {
         "msg": "We are so glad we found this place."
